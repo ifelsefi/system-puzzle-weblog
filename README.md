@@ -5,7 +5,7 @@
 
 # Solution #
 
-```docker-compose.yml```
+## docker-compose.yml ##
 `db` did not have port mapping defined so it was difficult to check whether it was being populated properly.  So I exposed host port `5432` to the same container port
 
 `nginx` was set to listen on host port `80,` which would be the same as `ingestion` service so I changed that to 8080.  Moreover, it was set to use container port `8080` which isn't correct given `conf.d/flaskapp.conf.`
@@ -20,7 +20,7 @@ Remove several blank lines that contained whitespaces in all Python application 
 
 ## Ingestion Application ##
 
-Dockerfile did not copy over `utils.py.'
+Dockerfile did not copy over `utils.py.`
 
 Added `source` to `body` var which will store the source in RabbitMQ.
 
