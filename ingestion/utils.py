@@ -1,5 +1,6 @@
 import datetime
 
+
 def parse_log(msg):
     # Retrieves relevant information from GET request
     decomposed_message = msg.split(" ")
@@ -8,6 +9,7 @@ def parse_log(msg):
     time = decomposed_message[3][1:]
     day = datetime.datetime.strptime(time, "%d/%b/%Y:%X").date()
     return day, status, source
+
 
 def is_get_request(msg):
     # Determines is msg is a GET request

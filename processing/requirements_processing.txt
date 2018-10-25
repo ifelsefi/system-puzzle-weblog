@@ -1,2 +1,4 @@
 pika
-psycopg2
+#psycopg2
+# wheel package will be renamed to below
+psycopg2-binary

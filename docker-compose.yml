@@ -6,6 +6,11 @@ services:
       - ./docker-entrypoint-initdb.d/init-tables.sh:/docker-entrypoint-initdb.d/init-tables.sh
     env_file:
      - env_file
+    # added ports for postgres
+    # so we can connect then check
+    # the database rows
+    ports:
+     - "5432:5432"
     networks:
       - db_network
   flaskapp:
@@ -56,8 +61,13 @@ services:
      - "81:5672"
   nginx:
     image: "nginx:1.13.5"
+    #changed nginx host port
+    #as one cannot have two daemons
+    #listening on port 80
+    #whereas nginx does not exist on 8080
+    #within the container
     ports:
-      - "80:8080"
+      - "8080:80"
     volumes:
       - ./conf.d:/etc/nginx/conf.d
     networks:

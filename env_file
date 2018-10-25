@@ -1,5 +1,6 @@
 POSTGRES_USER=dbuser
 POSTGRES_PASSWORD=secure
+PGPASSWORD=secure
 POSTGRES_DB=webserver
 APP_SECRET_KEY=super_duper_secret
 RABBITMQ_DEFAULT_USER=rabbitmq
