@@ -17,7 +17,7 @@ Remove several blank lines that contained whitespaces as well as those which wer
 
 ## Postgres ##
 
-No longer stopping on `pgsl` errors.
+No longer stopping on `psql` errors.
 
 Added column for `source`.
 
