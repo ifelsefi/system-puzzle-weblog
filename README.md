@@ -8,9 +8,7 @@
 ## docker-compose.yml ##
 `db` did not have port mapping defined so it was difficult to check whether it was being populated properly.  So I exposed host port `5432` to the same container port
 
-`nginx` was set to listen on host port `80,` which would be the same as `ingestion` service so I changed that to 8080.  Moreover, it was set to use container port `8080` which isn't correct given `conf.d/flaskapp.conf.`
-
-`env_file` did not have postgres var `PGPASSWORD` set per [documentation](https://www.postgresql.org/docs/9.6/static/libpq-envars.html) which would be needed for `pgsq` to create tables in `docker-entrypoint-initdb.d/init-tables.sh.`
+`nginx` was set to listen on host port `80,` which would be the same as `ingestion` service so I changed that to 8080.  Moreover, it was set to use container port `8080` which isn't correct given `conf.d/flaskapp.conf`
 
 ## All Python Applications ##
 
